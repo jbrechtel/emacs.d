@@ -1,0 +1,22 @@
+
+;; ----- smex-history -----
+(
+ disable-paredit-mode
+ paredit-splice-sexp-killing-forward
+ paredit-kill
+ nrepl-jack-in
+ list-packages
+ cd
+ 5x5
+)
+
+;; ----- smex-data -----
+(
+ (list-packages . 4)
+ (nrepl-jack-in . 6)
+ (turn-off-evil-mode . 1)
+ (nrepl-quit . 1)
+ (disable-paredit-mode . 3)
+ (paredit-kill . 1)
+ (paredit-splice-sexp-killing-forward . 1)
+)

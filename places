@@ -1,0 +1,9 @@
+;;; -*- coding: utf-8 -*-
+(("/Users/jbrechtel/.emacs" . 1284)
+ ("/Users/jbrechtel/.emacs.d/elpa/clojure-test-mode-2.1.0/clojure-test-mode-autoloads.el" . 835)
+ ("/Users/jbrechtel/.emacs.d/init.el" . 1199)
+ ("/Users/jbrechtel/work/cljspike/project.clj" . 480)
+ ("/Users/jbrechtel/work/cljspike/src/hello/handler.clj" . 350)
+ ("/Users/jbrechtel/work/cljspike/src/hello/views.clj" . 233)
+ ("/Users/jbrechtel/work/cljspike/test/hello/test/handler.clj" . 215)
+ ("/Users/jbrechtel/work/pocketfave/src/com/nevercertain/readyofaves/pocket.clj" . 557))

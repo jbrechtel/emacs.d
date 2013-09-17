@@ -1,3 +1,6 @@
 *.elc
 auto-save-list
 emacs-user-init.el
+*#*
+backups
+elpa
