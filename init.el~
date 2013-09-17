@@ -37,10 +37,11 @@
       "http://marmalade-repo.org/packages/"))
 
 (package-initialize)
+
 (ido-mode)
 (evil-mode 1)
 
-;; fix the PATH variable when launching from something like OSXAabcK
+;; fix the PATH variable
 (defun set-exec-path-from-shell-PATH ()
   (let ((path-from-shell (shell-command-to-string "$SHELL -i -c 'echo $PATH'")))
     (setenv "PATH" path-from-shell)
@@ -54,47 +55,6 @@
    (my-move-key evil-motion-state-map evil-normal-state-map " ")
 
 (load-theme 'solarized-dark)
-
-(defvar my-packages '(anaphora
-		      clojure-mode
-		      clojure-project
-		      clojure-test-mode
-		      elpakit
-		      evil
-		      evil-leader
-		      find-file-in-project
-		      ido-ubiquitous
-		      idomenu
-		      nrepl
-		      nzenburn-theme
-		      paredit
-		      rainbow-delimiters
-		      solarized-theme
-		      undo-tree))
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-
-
-(define-key evil-insert-state-map "k" #'cofi/maybe-exit)
-
-(evil-define-command cofi/maybe-exit ()
-  :repeat change
-  (interactive)
-  (let ((modified (buffer-modified-p)))
-    (insert "k")
-    (let ((evt (read-event (format "Insert %c to exit insert state" ?j)
-               nil 0.5)))
-      (cond
-       ((null evt) (message ""))
-       ((and (integerp evt) (char-equal evt ?j))
-    (delete-char -1)
-    (set-buffer-modified-p modified)
-    (push 'escape unread-command-events))
-       (t (setq unread-command-events (append unread-command-events
-                          (list evt))))))))
-
 
 (when window-system (set-exec-path-from-shell-PATH))
 (custom-set-variables
